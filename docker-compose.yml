@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  portfolio-web:
+    # This names your container "profile" just like you were trying to do earlier
+    container_name: profile
+    build: 
+      # Tells Docker to build the image using the Dockerfile in this directory
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # Maps port 80 on your Windows machine to port 80 inside the container
+      - "80:80"
+    restart: unless-stopped
